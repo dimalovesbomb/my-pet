@@ -1,0 +1,139 @@
+* {
+  color: white;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: #282c34;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 0.7fr 2.3fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 15px 15px;
+  grid-template-areas: 
+    'header header header'
+    'aside main main'
+    'footer footer footer';
+  max-width: 95vw;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+      'aside header'
+      'main main'
+      'footer footer'
+      ;
+  }
+
+  @media (max-width: 425px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "aside"
+        "main"
+        "footer";
+  }
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &_language-buttons {
+    display: flex;
+    justify-content: space-between;
+
+    &_button {
+      background-color: rgba(74, 69, 62, 0.5);
+      border: 1px solid black;
+      border-radius: 10px;
+      margin: 0 15px;
+      padding: 10px;
+
+      &[data-active=true] {
+        background-color: rgba(19, 48, 102, 0.5);
+      }
+
+      &:hover {
+        background-color: rgba(74, 69, 62, 0.8);
+      }
+
+      &:hover:not([data-active=false]){
+        background-color: rgba(19, 48, 102, 0.5);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 60px;
+  }
+}
+
+.aside {
+  grid-area: aside;
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 20px 0;
+    margin-top: 100px;
+
+    @media (max-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  a {
+    border: 1px solid beige;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgb(36, 39, 70, 0.5);
+    text-align: center;
+    max-width: 170px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 14px;
+
+    &:hover {
+      background-color: inherit;
+      transition: 100ms;
+    }
+
+    &[data-active=true] {
+      background-color: inherit;
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+      margin-right: 10px;
+    }
+  }
+}
+
+.main {
+  grid-area: main;
+  min-height: 80vh;
+
+  &_container {
+    margin-right: 10rem;
+
+    @media (max-width: 768px) {
+      margin-right: 0;
+    }
+  }
+}
+
+.footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
