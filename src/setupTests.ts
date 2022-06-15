@@ -30,7 +30,7 @@ export async function withDelay(iterable: unknown[] | string, cb: (a: unknown) =
     const promises = [];
 
     for (const item of iterable) {
-        let interval = delay ? delay : randomIntFromInterval(RandomMS.min, RandomMS.max);
+        const interval = delay ? delay : randomIntFromInterval(RandomMS.min, RandomMS.max);
         const promise = await new Promise(resolve => {
             setTimeout(() => resolve(cb(item)), interval);
         });
@@ -38,5 +38,5 @@ export async function withDelay(iterable: unknown[] | string, cb: (a: unknown) =
         promises.push(promise);
     }
 
-    return await Promise.all(promises);
+    return Promise.all(promises);
 }
