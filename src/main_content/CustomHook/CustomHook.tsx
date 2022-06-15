@@ -12,7 +12,7 @@ export const CustomHook: React.FC = () => {
                 <input type="text" value={inputVal} onChange={setInputVal} />
             </div>
             <div>
-                <span>let result{inputVal && ' = '}{transformedVal};</span>
+                <span data-testid="tranformResult">let result{inputVal && ' = '}{transformedVal};</span>
             </div>
         </div>
     );
