@@ -38,6 +38,10 @@ body {
   }
 }
 
+input {
+  color: black;
+}
+
 .header {
   grid-area: header;
   display: flex;

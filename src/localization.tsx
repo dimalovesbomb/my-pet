@@ -151,6 +151,12 @@ const localization: Localization = {
             ru: 'Это дочерний компонент',
         },
     },
+    '/HOC': {
+        'HOC example': {
+            en: 'HOC example',
+            ru: 'HOC пример',
+        }
+    },
 };
 
 export const localize = (path: string, text: string) => {

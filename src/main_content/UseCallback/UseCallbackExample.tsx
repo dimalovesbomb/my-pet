@@ -18,7 +18,7 @@ export const UseCallbackExampleParent: React.FC = () => {
         console.log(`incrementCount was invoking for ${Date.now() - timeInvoked}ms.`);
         setCount(count + 1);
     }, [count]);
-
+    
     const increaseNumber = () => setNumber(number + 1);
 
     return (
