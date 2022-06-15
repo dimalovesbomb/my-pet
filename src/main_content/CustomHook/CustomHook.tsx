@@ -1,6 +1,6 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { SyntheticEvent, useState } from "react";
 
-type StringToArrayLike = [string, string, (e: ChangeEvent) => void];
+type StringToArrayLike = [string, string, (e: SyntheticEvent<HTMLInputElement>) => void];
 
 export const CustomHook: React.FC = () => {
     const [inputVal, transformedVal, setInputVal] = useStringToArrayLike();
@@ -22,7 +22,7 @@ function useStringToArrayLike(): StringToArrayLike {
     const [value, setValue] = useState('');
     const [transformedValue, setTransformedValue] = useState('');
 
-    const transform = (e: ChangeEvent<any>) => {
+    const transform = (e: SyntheticEvent<HTMLInputElement>) => {
         const modifiedString = e.currentTarget.value.split(',').join(', ');
 
         setValue(e.currentTarget.value);
