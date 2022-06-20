@@ -1,7 +1,7 @@
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './store';
-import React from 'react';
+import React, { ComponentType } from 'react';
 
 function randomIntFromInterval(min: number, max: number) {
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -40,12 +40,19 @@ export async function withDelay(iterable: unknown[] | string, cb: (a: unknown) =
     return Promise.all(promises);
 }
 
-export const withWholeContext: React.FC<never> = ({ children }) => {
-    return (
-        <Provider store={store}>
-            <BrowserRouter>
-                {children}
-            </BrowserRouter>
-        </Provider>
-    )
+/**
+ * HOC that recreates state and router environment for tested component
+ * @param Components React-children
+ * @returns your passed element(s) with Router and Store as a React.Element
+ */
+export function withWholeContext<T>(Components: ComponentType<unknown>) {
+    return (props: T) => {
+        return (
+            <Provider store={store}>
+                <BrowserRouter>
+                    <Components {...props}/>
+                </BrowserRouter>
+            </Provider>
+        )
+    }
 }
