@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react"
 import { UseReducer } from "./UseReducer";
-import { withDelay } from '../../setupTests';
+import { withDelay } from '../../testHelpers';
 
 test('useReducer page: sets value to a firstName', async () => {
     render(<UseReducer/>);

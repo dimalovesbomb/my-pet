@@ -1,6 +1,5 @@
 import React from "react";
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { MySyntaxHighlighter } from "../../components/MySyntaxHighlighter";
 import { localize } from "../../localization";
 import './useMemo.scss';
 import { UseMemoExample } from "./UseMemoExample";
@@ -48,7 +47,7 @@ export const UseMemo: React.FC = () => {
             <h3 className="usememo-container_h3">{localize(currentPath, 'useMemo text header')}</h3>
             <article className="usememo-container_article">
                 <p>{localize(currentPath, 'useMemo defenition')}</p>
-                <SyntaxHighlighter language="javascript" style={dark}>{codeExample}</SyntaxHighlighter>
+                <MySyntaxHighlighter codeExample={codeExample} />
                 <div className="usememo-container_article_self-example">
                   <UseMemoExample />
                 </div>

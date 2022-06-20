@@ -1,10 +1,9 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { localize } from "../../localization";
 import { UseCallbackExampleParent } from "./UseCallbackExample";
 import './useCallback.scss'
+import { MySyntaxHighlighter } from "../../components/MySyntaxHighlighter";
 
 const codeExample = `
 import React from "react";
@@ -98,7 +97,7 @@ export const UseCallback: React.FC = () => {
             <h3 className="usecallback-container_h3">{localize(location.pathname, 'useCallback text header')}</h3>
             <article className="usecallback-container_article">
                 <p>{localize(location.pathname, 'useCallback defenition')}</p>
-                <SyntaxHighlighter language="javascript" style={dark}>{codeExample}</SyntaxHighlighter>
+                <MySyntaxHighlighter codeExample={codeExample} />
                 <div className="usecallback-container_article_self-example">
                     <UseCallbackExampleParent />
                 </div>
