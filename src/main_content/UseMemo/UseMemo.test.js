@@ -1,9 +1,30 @@
 import { fireEvent, render, screen } from "@testing-library/react"
-import { withDelay } from '../../setupTests';
+import { withDelay } from '../../testHelpers';
 import { withWholeContext } from "../../testHelpers";
 import { UseMemo } from "./UseMemo";
 
-test('useMemo page', async () => {
-    const content = withWholeContext(UseMemo);
-    render(content);
-})
+test('useMemo page: clicks a button and counter increases', async () => {
+    const Content = withWholeContext(UseMemo);
+    render(<Content />);
+
+    const counterButtonEl = screen.getByTestId('usememo-counter-button');
+    fireEvent.click(counterButtonEl);
+
+    const resultEl = screen.getByTestId('usememo-counter-result');
+    expect(resultEl).toHaveTextContent(/Counter : 1/i);
+});
+
+test('useMemo page: inputs and changes output', async () => {
+    const Content = withWholeContext(UseMemo);
+    render(<Content />);
+
+    const inputEl = screen.getByPlaceholderText('Enter a number');
+    const testString = '12345';
+    await withDelay(testString, letter => {
+        fireEvent.change(inputEl, { target: { value : inputEl.value + letter }});
+    });
+
+    const resultEl = screen.getByTestId('usememo-result');
+    const resultOfUserOperation = '152399025';
+    expect(resultEl).toHaveTextContent(resultOfUserOperation);
+});
