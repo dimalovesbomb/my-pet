@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react"
-import { withDelay } from '../../setupTests';
+import { withDelay } from '../../testHelpers';
 import { CustomHook } from "./CustomHook";
 
 test('customHook page: types to input and renders result', async () => {
