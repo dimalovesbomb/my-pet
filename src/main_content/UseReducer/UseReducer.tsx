@@ -94,7 +94,7 @@ export const UseReducer: React.FC = () => {
                             onChange={onInputChange}
                             value={birthday}
                         />
-                        <button className="button" type="submit" onSubmit={submitHandler}>Submit</button>
+                        <button className="button" type="submit" aria-label="Submit" onSubmit={submitHandler}>Submit</button>
                     </form>
                     {
                         isSubmitted &&
