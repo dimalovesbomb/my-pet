@@ -4,6 +4,8 @@ interface SpanProps {
     text: string;
 }
 
+const currentPath = '/hoc';
+
 export const HOC: React.FC = () => {
     const [value, setValue] = useState('');
     const SpanWithUppercase = withUppercaseText(Span);

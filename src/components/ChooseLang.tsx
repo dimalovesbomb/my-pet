@@ -6,7 +6,7 @@ interface ChooseLangProps {
     changeLanguage: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-export const ChooseLang: React.FC<ChooseLangProps> = ({lang, changeLanguage}) => {
+export const ChooseLang: React.FC<ChooseLangProps> = ({ lang, changeLanguage }) => {
     return (
         <div className="header_language-buttons">
             <button
@@ -15,7 +15,7 @@ export const ChooseLang: React.FC<ChooseLangProps> = ({lang, changeLanguage}) =>
                 data-active={lang === LANGS.en}
                 data-lang={LANGS.en}
             >
-                    English
+                English
             </button>
             <button
                 className="header_language-buttons_button"
@@ -23,7 +23,7 @@ export const ChooseLang: React.FC<ChooseLangProps> = ({lang, changeLanguage}) =>
                 data-active={lang === LANGS.ru}
                 data-lang={LANGS.ru}
             >
-                    Русский
+                Русский
             </button>
         </div>
     );

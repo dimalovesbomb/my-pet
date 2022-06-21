@@ -12,6 +12,9 @@ test('useMemo page: clicks a button and counter increases', async () => {
 
     const resultEl = screen.getByTestId('usememo-counter-result');
     expect(resultEl).toHaveTextContent(/Counter : 1/i);
+
+    fireEvent.click(counterButtonEl);
+    expect(resultEl).toHaveTextContent(/Counter : 2/i);
 });
 
 test('useMemo page: inputs and changes output', async () => {
@@ -21,7 +24,7 @@ test('useMemo page: inputs and changes output', async () => {
     const inputEl = screen.getByPlaceholderText('Enter a number');
     const testString = '12345';
     await withDelay(testString, letter => {
-        fireEvent.change(inputEl, { target: { value : inputEl.value + letter }});
+        fireEvent.change(inputEl, { target: { value: inputEl.value + letter } });
     });
 
     const resultEl = screen.getByTestId('usememo-result');

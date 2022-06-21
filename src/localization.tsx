@@ -157,6 +157,34 @@ const localization: Localization = {
             ru: 'HOC пример',
         }
     },
+    '/useReducer': {
+        'page header': {
+            en: 'useReducer example',
+            ru: 'Пример useReducer',
+        },
+        'usage explanation': {
+            en: `The useReducer Hook is similar to the useState Hook.
+                It allows for custom state logic.
+                If you find yourself keeping track of multiple pieces of state that rely on complex logic,
+                useReducer may be useful.
+                The useReducer Hook accepts two arguments: useReducer(<reducer>, <initialState>).
+                The reducer function contains your custom state logic and the initialState can be a simple value
+                but generally will contain an object.
+                The useReducer Hook returns the current state and a dispatch method.
+                Here is an example of useReducer:
+            `,
+            ru: `useReducer похож на useState хук.
+                Он позволяет написать кастомную логику стейта.
+                Если вы столкнулись с тем, что вам нужно следить за множественными изменениями в стейте, которые
+                связаны с массивной логикой, вам скорее всего понадобится useReducer.
+                useReducer принимает два аргумента: useReducer(<reducer>, <initialState>).
+                Функция-редьюсер содержит вашу кастомную логику, и initialState будет обычным значением,
+                хотя обычно это значение будет объектом.
+                useReducer возвращает акткуальные стейт и dispatch метод.
+                Вот пример использования хука:
+                `,
+        }
+    }
 };
 
 export const localize = (path: string, text: string) => {

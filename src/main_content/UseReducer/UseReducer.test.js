@@ -4,43 +4,43 @@ import { withDelay } from '../../testHelpers';
 
 test('useReducer page: sets value to a firstName', async () => {
     render(<UseReducer/>);
-    const firstNameInput = screen.getByText(/First name/i);
+    const firstNameInput = screen.getByTestId('firstName');
     const firstName = 'Dmitrii';
 
     await withDelay(firstName, letter => {
-        fireEvent.change(firstNameInput.children[0], { target: { value: firstNameInput.children[0].value + letter }})
+        fireEvent.change(firstNameInput, { target: { value: firstNameInput.value + letter }})
     });
     
-    expect(firstNameInput.children[0]).toHaveValue(firstName);
+    expect(firstNameInput).toHaveValue(firstName);
 });
 
 test('useReducer page: sets value to a lastName', async () => {
     render(<UseReducer/>);
-    const lastNameInput = screen.getByText(/Last name/i);
+    const lastNameInput = screen.getByTestId('lastName');
     const lastName = 'Kupriunin';
 
     await withDelay(lastName, letter => {
-        fireEvent.change(lastNameInput.children[0], { target: { value: lastNameInput.children[0].value + letter }});
+        fireEvent.change(lastNameInput, { target: { value: lastNameInput.value + letter }});
     });
     
-    expect(lastNameInput.children[0]).toHaveValue(lastName);
+    expect(lastNameInput).toHaveValue(lastName);
 });
 
 test('useReducer page: sets value to a birthday', async () => {
     render(<UseReducer/>);
-    const birthdayInput = screen.getByText(/Birthday/i);
+    const birthdayInput = screen.getByTestId('birthday');
     const birthday = '13.12.1994';
 
     await withDelay(birthday, letter => {
-        fireEvent.change(birthdayInput.children[0], { target: { value: birthdayInput.children[0].value + letter }});
+        fireEvent.change(birthdayInput, { target: { value: birthdayInput.value + letter }});
     });
     
-    expect(birthdayInput.children[0]).toHaveValue(birthday);
+    expect(birthdayInput).toHaveValue(birthday);
 });
 
 test('useReducer page: clicks button and renders results', () => {
     render(<UseReducer/>);
-    const submitButton = screen.getByText('Submit');
+    const submitButton = screen.getByLabelText('Submit');
     fireEvent.click(submitButton);
 
     const resultsDiv = screen.getByTestId('divResults');

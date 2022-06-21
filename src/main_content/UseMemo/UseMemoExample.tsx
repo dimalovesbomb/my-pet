@@ -1,9 +1,9 @@
 import React, { useMemo, useState } from "react";
-import { useLocation } from "react-router-dom";
 import { localize } from "../../localization";
 
+const currentPath = '/useMemo';
+
 export const UseMemoExample: React.FC = () => {
-    const location = useLocation()
     const [number, setNumber] = useState(0);
     const [counter, setCounter] = useState(0);
 
@@ -20,7 +20,7 @@ export const UseMemoExample: React.FC = () => {
 
     return (
         <div className="usememo-example">
-            <p>{localize(location.pathname, 'useMemo action example')}</p>
+            <p>{localize(currentPath, 'useMemo action example')}</p>
             <input
                 type="text"
                 placeholder="Enter a number"
@@ -28,7 +28,7 @@ export const UseMemoExample: React.FC = () => {
                 onChange={onChangeHandler} />
 
             <div data-testid="usememo-result">OUTPUT: {squaredNum}</div>
-            <button onClick={counterHander} data-testid="usememo-counter-button">Counter ++</button>
+            <button className="button" onClick={counterHander} data-testid="usememo-counter-button">Counter ++</button>
             <div data-testid="usememo-counter-result">Counter : {counter}</div>
         </div>
     );

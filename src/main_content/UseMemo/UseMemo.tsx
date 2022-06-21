@@ -1,8 +1,8 @@
 import React from "react";
 import { MySyntaxHighlighter } from "../../components/MySyntaxHighlighter";
 import { localize } from "../../localization";
-import './useMemo.scss';
 import { UseMemoExample } from "./UseMemoExample";
+import './useMemo.scss';
 
 const currentPath = '/useMemo';
 

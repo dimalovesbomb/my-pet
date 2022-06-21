@@ -27,7 +27,7 @@ export const UseCallbackExampleParent: React.FC = () => {
             <p>{localize(location.pathname, 'parent')}</p>
             <div className="usecallback-example_child_content">
                 <span>Number value: {number}</span>
-                <button onClick={increaseNumber}>Increment (NO useCallback trigger)</button>
+                <button className="button" onClick={increaseNumber}>Increment (NO useCallback trigger)</button>
             </div>
             <br/>
             <div className="usecallback-example_child">
