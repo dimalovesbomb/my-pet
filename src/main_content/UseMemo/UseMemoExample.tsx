@@ -1,9 +1,9 @@
 import React, { useMemo, useState } from "react";
-import { useLocation } from "react-router-dom";
 import { localize } from "../../localization";
 
+const currentPath = '/useMemo';
+
 export const UseMemoExample: React.FC = () => {
-    const location = useLocation()
     const [number, setNumber] = useState(0);
     const [counter, setCounter] = useState(0);
 
@@ -20,7 +20,7 @@ export const UseMemoExample: React.FC = () => {
 
     return (
         <div className="usememo-example">
-            <p>{localize(location.pathname, 'useMemo action example')}</p>
+            <p>{localize(currentPath, 'useMemo action example')}</p>
             <input
                 type="text"
                 placeholder="Enter a number"
