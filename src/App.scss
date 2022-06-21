@@ -22,7 +22,8 @@ body {
   @media (max-width: 768px) {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
-      'aside header'
+      'header header'
+      'aside aside'
       'main main'
       'footer footer'
       ;
@@ -84,12 +85,14 @@ input {
   nav {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     width: 100%;
     margin: 20px 0;
     margin-top: 100px;
 
     @media (max-width: 768px) {
       flex-direction: row;
+      margin-top: 0;
     }
   }
 
@@ -116,7 +119,6 @@ input {
     @media (max-width: 768px) {
       display: flex;
       align-items: center;
-      margin-bottom: 0;
       margin-right: 10px;
     }
   }
@@ -129,7 +131,7 @@ input {
   &_container {
     margin-right: 15rem;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       margin-right: 0;
     }
   }

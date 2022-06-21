@@ -106,7 +106,8 @@ const customStyle: React.CSSProperties = {
     background: 'none', // reset defaults
     backgroundColor: '#323741',
     border: '2px solid #555f71',
-    borderRadius: 5
+    borderRadius: 5,
+    maxWidth: '93vw'
 }
 
 export const MySyntaxHighlighter: React.FC<MySyntaxHighlighterProps> = ({codeExample}) => {

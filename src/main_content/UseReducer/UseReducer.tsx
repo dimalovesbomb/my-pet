@@ -71,41 +71,41 @@ export const UseReducer: React.FC = () => {
             <article className="use-reduсer_text">
                 <p>{localize(currentPath, 'usage explanation')}</p>
                 <MySyntaxHighlighter codeExample={codeExample} />
+                <div className="use-reducer_example">
+                    <form onSubmit={submitHandler}>
+                        <Input
+                            className="use-reducer_example_input"
+                            id={ActionType.FirstName}
+                            label="First name"
+                            onChange={onInputChange}
+                            value={firstName}
+                        />
+                        <Input
+                            className="use-reducer_example_input"
+                            id={ActionType.LastName}
+                            label="Last name"
+                            onChange={onInputChange}
+                            value={lastName}
+                        />
+                        <Input
+                            className="use-reducer_example_input"
+                            id={ActionType.Birthday}
+                            label="Birthday"
+                            onChange={onInputChange}
+                            value={birthday}
+                        />
+                        <button className="button" type="submit" onSubmit={submitHandler}>Submit</button>
+                    </form>
+                    {
+                        isSubmitted &&
+                        <div data-testid="divResults">
+                            <p>{firstName}</p>
+                            <p>{lastName}</p>
+                            <p>{birthday}</p>
+                        </div>
+                    }
+                </div>
             </article>
-            <div className="use-reducer_example">
-                <form onSubmit={submitHandler}>
-                    <Input
-                        className="use-reducer_example_input"
-                        id={ActionType.FirstName}
-                        label="First name"
-                        onChange={onInputChange}
-                        value={firstName}
-                    />
-                    <Input
-                        className="use-reducer_example_input"
-                        id={ActionType.LastName}
-                        label="Last name"
-                        onChange={onInputChange}
-                        value={lastName}
-                    />
-                    <Input
-                        className="use-reducer_example_input" 
-                        id={ActionType.Birthday}
-                        label="Birthday"
-                        onChange={onInputChange}
-                        value={birthday}
-                    />
-                    <button className="button" type="submit" onSubmit={submitHandler}>Submit</button>
-                </form>
-                {
-                    isSubmitted &&
-                    <div data-testid="divResults">
-                        <p>{firstName}</p>
-                        <p>{lastName}</p>
-                        <p>{birthday}</p>
-                    </div>
-                }
-            </div>
         </div>
     );
 }

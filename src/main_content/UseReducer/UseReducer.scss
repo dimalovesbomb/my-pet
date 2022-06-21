@@ -1,7 +1,11 @@
 .use-reducer {
     &_example {
+        display: flex;
+        flex-wrap: wrap;
+
         &_input {
-            margin-left: 10px;
+            display: flex;
+            margin: 10px;
         }
     }
 }
