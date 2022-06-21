@@ -16,7 +16,7 @@ const UseCallbackExampleChild: React.FC<ChildProps> = ({ count, increaseCount })
             <p>{localize(location.pathname, 'child')}</p>
             <div className="usecallback-example_child_content">
                 <span>Increment value: {count}</span>
-                <button onClick={increaseCount}>Increment (useCallback trigger)</button>
+                <button className="button" onClick={increaseCount}>Increment (useCallback trigger)</button>
             </div>
             
         </>

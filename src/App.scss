@@ -127,7 +127,7 @@ input {
   min-height: 80vh;
 
   &_container {
-    margin-right: 10rem;
+    margin-right: 15rem;
 
     @media (max-width: 768px) {
       margin-right: 0;
@@ -140,4 +140,9 @@ input {
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
+}
+
+.button {
+  color: black;
+  margin-left: 10px;
 }

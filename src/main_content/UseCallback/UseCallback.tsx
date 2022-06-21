@@ -1,11 +1,10 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 import { localize } from "../../localization";
 import { UseCallbackExampleParent } from "./UseCallbackExample";
-import './useCallback.scss'
 import { MySyntaxHighlighter } from "../../components/MySyntaxHighlighter";
+import './useCallback.scss'
 
-const currentPath = '/customHook';
+const currentPath = '/useCallback';
 
 const codeExample = `
 import React from "react";
@@ -14,9 +13,9 @@ import UseCallbackExampleParent from "./UseCallbackExampleChild";
 export const UseCallback: React.FC = () => {
     return (
         <div className="usecallback-container main_container">
-            <h3 className="usecallback-container_h3">{localize(location.pathname, 'useCallback text header')}</h3>
+            <h3 className="usecallback-container_h3">{localize(currentPath, 'useCallback text header')}</h3>
             <article className="usecallback-container_article">
-                <p>{localize(location.pathname, 'useCallback defenition')}</p>
+                <p>{localize(currentPath, 'useCallback defenition')}</p>
                 <SyntaxHighlighter language="javascript" style={dark}>{codeExample}</SyntaxHighlighter>
                 <div className="usecallback-container_article_self-example">
                     <UseCallbackExampleParent />
@@ -95,9 +94,9 @@ export default React.memo(UseCallbackExampleChild);
 export const UseCallback: React.FC = () => {
     return (
         <div className="usecallback-container main_container">
-            <h3 className="usecallback-container_h3">{localize(location.pathname, 'useCallback text header')}</h3>
+            <h3 className="usecallback-container_h3">{localize(currentPath, 'useCallback text header')}</h3>
             <article className="usecallback-container_article">
-                <p>{localize(location.pathname, 'useCallback defenition')}</p>
+                <p>{localize(currentPath, 'useCallback defenition')}</p>
                 <MySyntaxHighlighter codeExample={codeExample} />
                 <div className="usecallback-container_article_self-example">
                     <UseCallbackExampleParent />

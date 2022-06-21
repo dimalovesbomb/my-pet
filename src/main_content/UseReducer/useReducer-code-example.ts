@@ -1,9 +1,7 @@
+export const codeExample = `
 import React, { SyntheticEvent, useReducer, useState } from "react";
 import { Input } from "../../components/Input";
-import { MySyntaxHighlighter } from "../../components/MySyntaxHighlighter";
 import { localize } from "../../localization";
-import { codeExample } from "./useReducer-code-example";
-import './UseReducer.scss';
 
 const currentPath = '/useReducer';
 
@@ -70,32 +68,13 @@ export const UseReducer: React.FC = () => {
             <h3>{localize(currentPath, 'page header')}</h3>
             <article className="use-reduсer_text">
                 <p>{localize(currentPath, 'usage explanation')}</p>
-                <MySyntaxHighlighter codeExample={codeExample} />
             </article>
             <div className="use-reducer_example">
                 <form onSubmit={submitHandler}>
-                    <Input
-                        className="use-reducer_example_input"
-                        id={ActionType.FirstName}
-                        label="First name"
-                        onChange={onInputChange}
-                        value={firstName}
-                    />
-                    <Input
-                        className="use-reducer_example_input"
-                        id={ActionType.LastName}
-                        label="Last name"
-                        onChange={onInputChange}
-                        value={lastName}
-                    />
-                    <Input
-                        className="use-reducer_example_input" 
-                        id={ActionType.Birthday}
-                        label="Birthday"
-                        onChange={onInputChange}
-                        value={birthday}
-                    />
-                    <button className="button" type="submit" onSubmit={submitHandler}>Submit</button>
+                    <Input id={ActionType.FirstName} label="First name" onChange={onInputChange} value={firstName} />
+                    <Input id={ActionType.LastName} label="Last name" onChange={onInputChange} value={lastName} />
+                    <Input id={ActionType.Birthday} label="Birthday" onChange={onInputChange} value={birthday} />
+                    <button type="submit" onSubmit={submitHandler}>Submit</button>
                 </form>
                 {
                     isSubmitted &&
@@ -109,3 +88,4 @@ export const UseReducer: React.FC = () => {
         </div>
     );
 }
+`;

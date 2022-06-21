@@ -28,7 +28,7 @@ export const UseMemoExample: React.FC = () => {
                 onChange={onChangeHandler} />
 
             <div data-testid="usememo-result">OUTPUT: {squaredNum}</div>
-            <button onClick={counterHander} data-testid="usememo-counter-button">Counter ++</button>
+            <button className="button" onClick={counterHander} data-testid="usememo-counter-button">Counter ++</button>
             <div data-testid="usememo-counter-result">Counter : {counter}</div>
         </div>
     );
