@@ -2,6 +2,8 @@ import React, { SyntheticEvent, useState } from "react";
 
 type StringToArrayLike = [string, string, (e: SyntheticEvent<HTMLInputElement>) => void];
 
+const currentPath = '/customHook';
+
 export const CustomHook: React.FC = () => {
     const [inputVal, transformedVal, setInputVal] = useStringToArrayLike();
 

@@ -5,6 +5,8 @@ import { UseCallbackExampleParent } from "./UseCallbackExample";
 import './useCallback.scss'
 import { MySyntaxHighlighter } from "../../components/MySyntaxHighlighter";
 
+const currentPath = '/customHook';
+
 const codeExample = `
 import React from "react";
 import UseCallbackExampleParent from "./UseCallbackExampleChild";
@@ -91,7 +93,6 @@ export default React.memo(UseCallbackExampleChild);
 
 
 export const UseCallback: React.FC = () => {
-    const location = useLocation();
     return (
         <div className="usecallback-container main_container">
             <h3 className="usecallback-container_h3">{localize(location.pathname, 'useCallback text header')}</h3>

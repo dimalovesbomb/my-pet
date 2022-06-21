@@ -1,6 +1,8 @@
 import React, { SyntheticEvent, useReducer, useState } from "react";
 import { Input } from "../../components/Input";
 
+const currentPath = '/useReducer';
+
 enum ActionType {
     FirstName = 'firstName',
     LastName = 'lastName',
