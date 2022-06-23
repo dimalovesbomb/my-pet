@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link, Outlet, Route, Routes, useLocation } from 'react-router-dom';
-
-import './App.scss';
 import { ChooseLang } from './components/ChooseLang';
 import { localize } from './localization';
 import { routes } from './routes';
 import { useAppDispatch, useAppSelector } from './store';
 import { changeLang, LANGS } from './store/locale';
+import './App.scss';
 
 const currentPath = '/';
 
