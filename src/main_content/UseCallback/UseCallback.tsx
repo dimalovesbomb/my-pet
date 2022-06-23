@@ -4,7 +4,7 @@ import { UseCallbackExampleParent } from "./UseCallbackExample";
 import { MySyntaxHighlighter } from "../../components/MySyntaxHighlighter";
 import './useCallback.scss'
 
-const currentPath = '/useCallback';
+export const currentPath = '/useCallback';
 
 const codeExample = `
 import React from "react";

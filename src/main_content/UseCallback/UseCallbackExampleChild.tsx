@@ -1,6 +1,6 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 import { localize } from "../../localization";
+import { currentPath } from "./UseCallback";
 
 interface ChildProps {
     count: number;
@@ -9,11 +9,10 @@ interface ChildProps {
 
 const UseCallbackExampleChild: React.FC<ChildProps> = ({ count, increaseCount }) => {
     console.log('child rendered');
-    const location = useLocation();
 
     return (
         <>
-            <p>{localize(location.pathname, 'child')}</p>
+            <p>{localize(currentPath, 'child')}</p>
             <div className="usecallback-example_child_content">
                 <span>Increment value: {count}</span>
                 <button className="button" onClick={increaseCount}>Increment (useCallback trigger)</button>
