@@ -1,10 +1,9 @@
 import React, { useCallback, useState } from "react";
-import { useLocation } from "react-router-dom";
 import { localize } from "../../localization";
+import { currentPath } from "./UseCallback";
 import UseCallbackExampleChild from "./UseCallbackExampleChild";
 
 export const UseCallbackExampleParent: React.FC = () => {
-    const location = useLocation();
     const [count, setCount] = useState(0);
     const [number, setNumber] = useState(0);
 
@@ -23,8 +22,8 @@ export const UseCallbackExampleParent: React.FC = () => {
 
     return (
         <div className="usecallback-example">
-            <p>{localize(location.pathname, 'useCallback action example')}</p>
-            <p>{localize(location.pathname, 'parent')}</p>
+            <p>{localize(currentPath, 'useCallback action example')}</p>
+            <p>{localize(currentPath, 'parent')}</p>
             <div className="usecallback-example_child_content">
                 <span>Number value: {number}</span>
                 <button className="button" onClick={increaseNumber}>Increment (NO useCallback trigger)</button>
