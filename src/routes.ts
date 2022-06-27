@@ -24,7 +24,7 @@ export const routes: Route[] = [
     { id: createId(), to: '*', linkText: '404', component: NotFound, show: false },
     { id: createId(), to: '/useMemo', linkText: 'useMemo example', component: UseMemo, show: true, },
     { id: createId(), to: '/useCallback', linkText: 'useCallback example', component: UseCallback, show: true, },
-    { id: createId(), to: '/hoc', linkText: 'HOC example', component: HOC, show: true },
-    { id: createId(), to: '/customHook', linkText: 'Custom hook example', component: CustomHook, show: true },
+    { id: createId(), to: '/hoc', linkText: 'HOC example', component: HOC, show: false },
+    { id: createId(), to: '/customHook', linkText: 'Custom hook example', component: CustomHook, show: false },
     { id: createId(), to: '/useReducer', linkText: 'useReducer example', component: UseReducer, show: true },
 ];
